@@ -1,0 +1,105 @@
+[
+  {
+    "output": "dist/assets/videos/hibw-ep11.mp4",
+    "size": 19839150,
+    "sha256": "170e7808487b3b325f1b9525843d313fdea6fb07487c4f355ad12a918bc75808",
+    "parts": [
+      {
+        "path": "media/hibw-ep11.part-001",
+        "size": 4194304,
+        "sha256": "634ea67285798eb293ee86e59a52470bedbabade7c1b67462fe93a859a0d4ca2"
+      },
+      {
+        "path": "media/hibw-ep11.part-002",
+        "size": 4194304,
+        "sha256": "7b191e5185c16cbf5de93fbb9fa36927deef6cfcee26f7eeb45ff96849b9dc93"
+      },
+      {
+        "path": "media/hibw-ep11.part-003",
+        "size": 4194304,
+        "sha256": "8206c701deaf5566ea7542f73f0b67a4b6c1ed2e91e43ed4209c4d9178fddbe1"
+      },
+      {
+        "path": "media/hibw-ep11.part-004",
+        "size": 4194304,
+        "sha256": "651943815c48b7de2c1eac68f6e092b706cbd292bd0f50b5917c96582566ee7b"
+      },
+      {
+        "path": "media/hibw-ep11.part-005",
+        "size": 3061934,
+        "sha256": "351823180885937bf3bc124682e95b0fd0629488bb8089ed05d3ee8b0e750140"
+      }
+    ]
+  },
+  {
+    "output": "dist/assets/videos/km-lebanese.mp4",
+    "size": 13220622,
+    "sha256": "fcac7a5feb9719ae36aa785669512a171760e5d39adca5f91c9ee18b0aeba3ad",
+    "parts": [
+      {
+        "path": "media/km-lebanese.part-001",
+        "size": 4194304,
+        "sha256": "87113a38594426b2220250dab1e542285acc3ae99287e6ab4a2c83f73bf11c19"
+      },
+      {
+        "path": "media/km-lebanese.part-002",
+        "size": 4194304,
+        "sha256": "8209619ee9a38a79b60d04b4e063bdf9182a0c590f2a5a128ea23daa43dc1d57"
+      },
+      {
+        "path": "media/km-lebanese.part-003",
+        "size": 4194304,
+        "sha256": "b2de439ba194d0a2c063610aae4424582f481e925f56fbc43f749e0dc47507b7"
+      },
+      {
+        "path": "media/km-lebanese.part-004",
+        "size": 637710,
+        "sha256": "dfbb93d5d399a72163f16623c5f498a23875f5a645cc90eca2bec8ea6a783264"
+      }
+    ]
+  },
+  {
+    "output": "dist/assets/videos/music-podcast.mp4",
+    "size": 7129106,
+    "sha256": "7514138f30e4086eb9718574822f5d99843765b59c1fb54a0c38894eb5cfab8c",
+    "parts": [
+      {
+        "path": "media/music-podcast.part-001",
+        "size": 4194304,
+        "sha256": "657e8e7d1152a04395a3dfdac08d677fa91413ea55a563e246f2e485a9becbde"
+      },
+      {
+        "path": "media/music-podcast.part-002",
+        "size": 2934802,
+        "sha256": "357a21ed279d26f846e96e927f52e04a8453e480d4ebaa9d62860330d7b6a917"
+      }
+    ]
+  },
+  {
+    "output": "dist/assets/videos/peller.mp4",
+    "size": 15295770,
+    "sha256": "6b551bc07cbaafd74e53892e99fa7fa8cd78d555029dd22078a9b1069124480a",
+    "parts": [
+      {
+        "path": "media/peller.part-001",
+        "size": 4194304,
+        "sha256": "a8be6bc6d51d7bc28f1e1c8de134fca584c4edd25cdcab7bdbe0b06cddbdcedc"
+      },
+      {
+        "path": "media/peller.part-002",
+        "size": 4194304,
+        "sha256": "bf33b3166bbb4252aebd399863cab5953ff8e72a60a906577a1ced14ef994ab2"
+      },
+      {
+        "path": "media/peller.part-003",
+        "size": 4194304,
+        "sha256": "76db18bf719da25754c2719931841bf2cb023ffb52dadacb255f591a843ccfbd"
+      },
+      {
+        "path": "media/peller.part-004",
+        "size": 2712858,
+        "sha256": "bdb719fc82fffb175bece386645e29a9b6b5e3425fbaffdbf4553d0ee989928b"
+      }
+    ]
+  }
+]

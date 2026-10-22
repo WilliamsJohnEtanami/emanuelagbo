@@ -1,0 +1,2 @@
+media/*.part-* -text -diff
+*.mp4 -text -diff
