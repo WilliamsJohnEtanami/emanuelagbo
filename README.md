@@ -27,7 +27,7 @@ The build automatically restores all complete videos before deployment.
 
 ## Update the portfolio
 
-Edit `dist/media.js` to update video order, captions, or the professional headshot. The long-form section contains How I Built Wealth episode 11, KM Lebanese, Peller, and Music Podcast. Flux Edit appears under short-form videos. Muted previews play while visible or hovered; clicking opens the complete video with sound controls. Add trailer and advertisement entries to `projects` with the matching category when those videos are ready.
+Edit `dist/media.js` to update video order, captions, or the professional headshot. The long-form section contains How I Built Wealth episode 11, KM Lebanese, Peller, and Music Podcast. Flux Edit appears under short-form videos. Muted previews play only while hovered; clicking opens the complete video with sound controls. Add trailer and advertisement entries to `projects` with the matching category when those videos are ready.
 
 Set `headshot` to `{ src: 'assets/emmanuel-headshot.jpg', alt: 'Emmanuel Agbo' }` after adding a portrait to `dist/assets/`.
 
