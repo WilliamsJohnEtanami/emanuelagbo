@@ -5,48 +5,31 @@ const menu=$('.menu'),nav=$('#navigation');
 function closeNavigation(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');}
 menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',open);menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');nav.classList.toggle('open',open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNavigation));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeNavigation();menu.focus();}});
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-let active=0;
-const dialog=$('#video-dialog'),player=dialog.querySelector('video'),track=$('#highlight-track');
+const dialog=$('#video-dialog'),player=dialog.querySelector('video');
 const media=window.WEBAR_MEDIA||{projects:[]};
-if(media.headshot?.src){const img=document.createElement('img');img.src=media.headshot.src;img.alt=media.headshot.alt||'Emmanuel Agbo';img.width=160;img.height=190;$('#headshot-slot').replaceChildren(img);$('#headshot-slot').classList.add('has-headshot');}
-const supplied=(media.highlights||[]).filter(p=>p.preview||p.full);if(!supplied.length&&media.hero?.preview)supplied.push(media.hero);
-const highlights=supplied.length?[...supplied,{title:'Talking head',line:'One voice.',accent:'A clear story.',label:'TALKING HEAD',style:'edit'},{title:'Documentary',line:'Real lives.',accent:'Lasting stories.',label:'DOCUMENTARY',style:'trailer'}]:[
-{title:'The art of the edit',line:'Every frame.',accent:'A feeling.',label:'MOTION STUDY / DESIGN PREVIEW',style:'edit'},
-{title:'Podcast trailers',line:'The moment.',accent:'The hook.',label:'PODCAST TRAILERS / HIGHLIGHTS COMING SOON',style:'trailer'},
-{title:'Shorts & reels',line:'Stop scrolling.',accent:'Start watching.',label:'SHORTS & REELS / HIGHLIGHTS COMING SOON',style:'shorts'}];
-const slides=[],dots=[];let returnFocus;
-function openVideo(project){returnFocus=document.activeElement;document.querySelectorAll('video').forEach(v=>v.pause());$('#video-title').textContent=project.title;$('#video-description').textContent=[project.client,project.role,project.description].filter(Boolean).join(' · ');player.src=project.full||project.preview;dialog.showModal();document.body.style.overflow='hidden';syncMotion();player.play().catch(()=>{});}
-$('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close()}});dialog.addEventListener('close',()=>{player.pause();player.removeAttribute('src');player.load();document.body.style.overflow='';syncMotion();returnFocus?.focus();});
-function syncMotion(){const stop=document.hidden||dialog.open;slides.forEach(slide=>{const v=slide.querySelector('video');if(!v)return;const running=!stop&&!reduced.matches&&slide.dataset.hovered==='true';slide.classList.toggle('paused',!running);if(running){if(!v.src)v.src=v.dataset.src;v.play().catch(()=>slide.classList.add('autoplay-blocked'));}else v.pause();});}
-highlights.forEach((p,i)=>{const slide=document.createElement('div');slide.className='showcase highlight-slide paused';slide.setAttribute('role','group');slide.setAttribute('aria-roledescription','slide');slide.setAttribute('aria-label',`${i+1} of ${highlights.length}: ${p.title}`);slide.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'){slide.dataset.hovered='true';syncMotion();}});slide.addEventListener('pointerleave',()=>{delete slide.dataset.hovered;syncMotion();});
-const top=document.createElement('div');top.className='timecode';top.setAttribute('aria-hidden','true');const brand=document.createElement('span');brand.textContent='WEBAR / '+String(i+1).padStart(2,'0');const title=document.createElement('span');title.textContent=p.title.toUpperCase();top.append(brand,title);slide.append(top);
-if(p.preview||p.full){const v=document.createElement('video');v.dataset.src=p.preview||p.full;v.muted=true;v.loop=true;v.playsInline=true;v.preload='none';v.setAttribute('aria-label',p.title+' muted preview');if(p.poster)v.poster=p.poster;slide.append(v);const button=document.createElement('button');button.className='watch-highlight';button.textContent='Watch '+p.title+' with sound';button.addEventListener('click',()=>openVideo(p));slide.append(button);}else{const demo=document.createElement('div');demo.className='motion-demo motion-'+p.style;demo.innerHTML='<div class="orbit" aria-hidden="true"></div><div class="demo-label"></div><div class="motion-words"><span></span><strong></strong></div><div class="wave" aria-hidden="true"></div><div class="demo-caption">WEBAR MEDIA <span>STORY · RHYTHM · IMPACT</span></div>';demo.querySelector('.demo-label').textContent=p.title.toUpperCase();demo.querySelector('.motion-words span').textContent=p.line;demo.querySelector('.motion-words strong').textContent=p.accent;slide.append(demo);}
-const caption=document.createElement('div');caption.className='showcase-controls';caption.textContent=p.title;slide.append(caption);track.append(slide);slides.push(slide);
-const dot=document.createElement('button');dot.type='button';dot.setAttribute('aria-label',`Go to highlight ${i+1}: ${p.title}`);dot.addEventListener('click',()=>goTo(i));$('#highlight-dots').append(dot);dots.push(dot);});
-function slideOffset(index){return slides[index].offsetLeft-slides[0].offsetLeft;}
-function updateControls(){
-$('#highlight-count').textContent=String(active+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
-dots.forEach((dot,i)=>dot.setAttribute('aria-pressed',String(i===active)));
-$('#highlight-prev').disabled=active===0;$('#highlight-next').disabled=active===slides.length-1;syncMotion();
+let returnFocus;
+function openVideo(project){returnFocus=document.activeElement;document.querySelectorAll('video').forEach(v=>v.pause());$('#video-title').textContent=project.title;$('#video-description').textContent=[project.client,project.role,project.description].filter(Boolean).join(' / ');player.src=project.full||project.preview;dialog.showModal();document.body.style.overflow='hidden';player.play().catch(()=>{});}
+$('.dialog-close').addEventListener('click',()=>dialog.close());
+dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close()}});
+dialog.addEventListener('close',()=>{player.pause();player.removeAttribute('src');player.load();document.body.style.overflow='';returnFocus?.focus();});const categoryTargets={
+  'podcast-trailer':$('#podcast-trailer-grid'),
+  'talking-head':$('#talking-head-grid'),
+  documentary:$('#documentary-grid'),
+  reels:$('#reels-grid')
+};
+const projectItems=[
+  ...(media.highlights||[]).map(p=>({...p,category:'podcast-trailer'})),
+  ...(media.projects||[]),
+  ...(media.shortForm?.preview||media.shortForm?.full?[{...media.shortForm,category:'reels'}]:[])
+].filter(p=>p.title&&(p.preview||p.full)&&p.poster);
+function makeProjectCard(p){
+  const card=document.createElement('button');card.className='project';card.type='button';
+  const img=document.createElement('img');img.src=p.poster;img.alt=p.title;img.loading='lazy';card.append(img);
+  const src=p.preview||p.full;
+  if(src){const v=document.createElement('video');v.dataset.src=src;v.muted=true;v.loop=true;v.playsInline=true;v.preload='none';v.hidden=true;card.append(v);card.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'&&!reduced.matches){img.hidden=true;v.hidden=false;if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{img.hidden=false;v.hidden=true;});}});card.addEventListener('pointerleave',()=>{v.pause();v.hidden=true;img.hidden=false;});}
+  const title=document.createElement('h3');title.textContent=p.title+' ';title.append(createArrow());
+  const caption=document.createElement('p');caption.textContent=[p.client,p.role].filter(Boolean).join(' / ');card.append(title,caption);
+  card.addEventListener('click',()=>openVideo(p));return card;
 }
-let scrollTarget=null;
-function updatePosition(){
-// A desktop row can show several cards. Keep its selected preview independent
-// of scroll position when the entire row already fits in the viewport.
-if(track.scrollWidth<=track.clientWidth+2)return;
-if(scrollTarget!==null){if(Math.abs(track.scrollLeft-scrollTarget)<2)scrollTarget=null;return;}
-let nearest=0;slides.forEach((slide,i)=>{if(Math.abs(slideOffset(i)-track.scrollLeft)<Math.abs(slideOffset(nearest)-track.scrollLeft))nearest=i;});active=nearest;
-updateControls();
-}
-function goTo(index){active=Math.max(0,Math.min(slides.length-1,index));updateControls();const left=Math.min(slideOffset(active),track.scrollWidth-track.clientWidth);scrollTarget=Math.abs(track.scrollLeft-left)>2?left:null;track.scrollTo({left,behavior:reduced.matches?'instant':'smooth'});}
-['pointerdown','wheel','touchstart'].forEach(event=>track.addEventListener(event,()=>{scrollTarget=null;},{passive:true}));
-track.addEventListener('scroll',updatePosition,{passive:true});track.addEventListener('keydown',e=>{if(e.target!==track)return;if(e.key==='ArrowRight'){e.preventDefault();goTo(active+1)}if(e.key==='ArrowLeft'){e.preventDefault();goTo(active-1)}if(e.key==='Home'){e.preventDefault();goTo(0)}if(e.key==='End'){e.preventDefault();goTo(slides.length-1)}});
-$('#highlight-prev').addEventListener('click',()=>goTo(active-1));$('#highlight-next').addEventListener('click',()=>goTo(active+1));new ResizeObserver(()=>{track.scrollTo({left:slideOffset(active),behavior:'instant'});updateControls();}).observe(track);updateControls();
-reduced.addEventListener('change',syncMotion);document.addEventListener('visibilitychange',()=>{if(document.hidden)document.querySelectorAll('video').forEach(v=>v.pause());syncMotion()});
-const categoryTargets={trailers:$('#trailers-grid'),longform:null,shortform:$('#shortform-grid'),advertisements:$('#advertisements-grid')};
-function categoryKey(value=''){const key=value.toLowerCase().replace(/[ _]/g,'-');if(['trailer','trailers'].includes(key))return 'trailers';if(['long-form','longform','podcast','podcasts'].includes(key))return 'longform';if(['short-form','shortform','reel','reels'].includes(key))return 'shortform';if(['ad','ads','advertisement','advertisements'].includes(key))return 'advertisements';return '';}
-const projectItems=(media.projects||[]).filter(p=>p.title&&(p.preview||p.full)&&p.poster);if(media.shortForm?.preview||media.shortForm?.full)projectItems.push({...media.shortForm,category:'short-form'});
-function makeProjectCard(p){const card=document.createElement('button');card.className='project';card.type='button';const img=document.createElement('img');img.src=p.poster;img.alt=p.title;img.loading='lazy';card.append(img);const src=p.preview||p.full;if(src){const v=document.createElement('video');v.dataset.src=src;v.muted=true;v.loop=true;v.playsInline=true;v.preload='none';v.hidden=true;card.append(v);card.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'&&!reduced.matches){img.hidden=true;v.hidden=false;if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{img.hidden=false;v.hidden=true;});}});card.addEventListener('pointerleave',()=>{v.pause();v.hidden=true;img.hidden=false;});}const title=document.createElement('h3');title.textContent=p.title+' ';title.append(createArrow());const caption=document.createElement('p');caption.textContent=[p.client,p.role].filter(Boolean).join(' / ');card.append(title,caption);card.addEventListener('click',()=>openVideo(p));return card;}
-for(const p of projectItems){const target=categoryTargets[categoryKey(p.category)];if(target)target.append(makeProjectCard(p));}
-for(const [key,target] of Object.entries(categoryTargets)){if(target&&!target.children.length){const empty=document.createElement('div');empty.className='category-empty';empty.textContent='More work coming soon';target.append(empty);}}
-$('#enquiry').addEventListener('submit',e=>{e.preventDefault();if(!e.currentTarget.reportValidity())return;const f=new FormData(e.currentTarget);const brief=`Hello Emmanuel, I’d like to discuss a project.\n\nName: ${f.get('name')}\nEmail: ${f.get('email')}\nChannel: ${f.get('channel')||'Not provided'}\nServices: ${f.getAll('service').join(', ')||'To discuss'}\n\nProject: ${f.get('details')}\nTimeline: ${f.get('timeline')||'To discuss'}`;const url='https://wa.me/2348123051817?text='+encodeURIComponent(brief);const win=window.open(url,'_blank','noopener,noreferrer');$('#form-status').replaceChildren();const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Open your prepared brief in WhatsApp ';a.append(createArrow());a.className='text-link';$('#form-status').append(a);});
+for(const p of projectItems){const target=categoryTargets[p.category];if(target)target.append(makeProjectCard(p));}
+for(const target of Object.values(categoryTargets)){if(!target.children.length){const empty=document.createElement('div');empty.className='category-empty';empty.textContent='More work coming soon';target.append(empty);}}$('#enquiry').addEventListener('submit',e=>{e.preventDefault();if(!e.currentTarget.reportValidity())return;const f=new FormData(e.currentTarget);const brief=`Hello Emmanuel, I’d like to discuss a project.\n\nName: ${f.get('name')}\nEmail: ${f.get('email')}\nChannel: ${f.get('channel')||'Not provided'}\nServices: ${f.getAll('service').join(', ')||'To discuss'}\n\nProject: ${f.get('details')}\nTimeline: ${f.get('timeline')||'To discuss'}`;const url='https://wa.me/2348123051817?text='+encodeURIComponent(brief);const win=window.open(url,'_blank','noopener,noreferrer');$('#form-status').replaceChildren();const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Open your prepared brief in WhatsApp ';a.append(createArrow());a.className='text-link';$('#form-status').append(a);});
