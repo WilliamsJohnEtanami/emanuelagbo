@@ -12,6 +12,15 @@ function withinRoot(path) {
 const media = JSON.parse(await readFile(resolve(root, 'media/manifest.json'), 'utf8'));
 for (const video of media) {
   const target = withinRoot(video.output);
+  try {
+    const existing = await readFile(target);
+    if (existing.length === video.size && createHash('sha256').update(existing).digest('hex') === video.sha256) {
+      console.log(`Ready: ${video.output}`);
+      continue;
+    }
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
   await mkdir(dirname(target), { recursive: true });
   const temporary = target + '.assembling';
   const handle = await open(temporary, 'w');

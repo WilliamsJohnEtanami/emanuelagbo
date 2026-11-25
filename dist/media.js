@@ -8,5 +8,12 @@ window.WEBAR_MEDIA = {
     { title: 'Music Podcast', label: '04 / MUSIC PODCAST', preview: 'assets/videos/music-podcast-preview.mp4', full: 'assets/videos/music-podcast.mp4', poster: 'assets/videos/music-podcast-poster.jpg' },
     { title: 'Khaime - Episode 12', label: '05 / KHAIME / EPISODE 12', preview: 'assets/videos/episode12-preview.mp4', full: 'assets/videos/episode12.mp4', poster: 'assets/videos/episode12-poster.jpg' }
   ],
-  projects: []
+  projects: [
+    { title: 'Airbnb', category: 'Talking Head', client: 'Airbnb', role: 'Talking Head', full: 'assets/videos/talking-head-airbnb.mp4', poster: 'assets/talking-head-airbnb-poster.jpg' },
+    { title: 'OURA Performance Film', category: 'Talking Head', client: 'OURA', role: 'Talking Head', full: 'assets/videos/talking-head-oura.mp4', poster: 'assets/talking-head-oura-poster.jpg' },
+    { title: 'C0012 66', category: 'Reels', role: 'Reel', full: 'assets/videos/reels-c0012.mp4', poster: 'assets/reels-c0012-poster.jpg' },
+    { title: 'Cow Video', category: 'Reels', role: 'Reel', full: 'assets/videos/reels-cow.mp4', poster: 'assets/reels-cow-poster.jpg' },
+    { title: 'Using Videos on LinkedIn', category: 'Reels', role: 'Reel', full: 'assets/videos/reels-linkedin.mp4', poster: 'assets/reels-linkedin-poster.jpg' },
+    { title: 'Building Your Team', category: 'Reels', role: 'Reel', full: 'assets/videos/reels-team.mp4', poster: 'assets/reels-team-poster.jpg' }
+  ]
 };
