@@ -11,3 +11,5 @@ dist/assets/videos/reels-c0012.mp4
 dist/assets/videos/reels-cow.mp4
 dist/assets/videos/reels-linkedin.mp4
 dist/assets/videos/reels-team.mp4
+dist/assets/videos/*.webm
+dist/assets/videos/*.mp4

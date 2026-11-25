@@ -1,4 +1,4 @@
-import { readFile, mkdir, open, rename, rm } from 'node:fs/promises';
+import { readFile, mkdir, open, rename, rm, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { resolve, dirname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -51,6 +51,12 @@ for (const video of media) {
     await handle.close().catch(() => {});
     await rm(temporary, { force: true });
     throw error;
+  }
+}
+const videoDirectory = resolve(root, 'dist/assets/videos');
+for (const entry of await readdir(videoDirectory, { withFileTypes: true })) {
+  if (entry.isFile() && entry.name.toLowerCase().endsWith('.mp4')) {
+    await rm(resolve(videoDirectory, entry.name), { force: true });
   }
 }
 console.log('Portfolio ready in dist/.');
