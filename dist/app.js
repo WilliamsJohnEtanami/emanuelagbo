@@ -10,7 +10,7 @@ const dialog=$('#video-dialog'),player=dialog.querySelector('video'),track=$('#h
 const media=window.WEBAR_MEDIA||{projects:[]};
 if(media.headshot?.src){const img=document.createElement('img');img.src=media.headshot.src;img.alt=media.headshot.alt||'Emmanuel Agbo';img.width=160;img.height=190;$('#headshot-slot').replaceChildren(img);$('#headshot-slot').classList.add('has-headshot');}
 const supplied=(media.highlights||[]).filter(p=>p.preview||p.full);if(!supplied.length&&media.hero?.preview)supplied.push(media.hero);
-const highlights=supplied.length?supplied:[
+const highlights=supplied.length?[...supplied,{title:'Talking head',line:'One voice.',accent:'A clear story.',label:'TALKING HEAD',style:'edit'},{title:'Documentary',line:'Real lives.',accent:'Lasting stories.',label:'DOCUMENTARY',style:'trailer'}]:[
 {title:'The art of the edit',line:'Every frame.',accent:'A feeling.',label:'MOTION STUDY / DESIGN PREVIEW',style:'edit'},
 {title:'Podcast trailers',line:'The moment.',accent:'The hook.',label:'PODCAST TRAILERS / HIGHLIGHTS COMING SOON',style:'trailer'},
 {title:'Shorts & reels',line:'Stop scrolling.',accent:'Start watching.',label:'SHORTS & REELS / HIGHLIGHTS COMING SOON',style:'shorts'}];
