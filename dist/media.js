@@ -7,6 +7,5 @@ window.WEBAR_MEDIA = {
     { title: 'Peller', label: '03 / PELLER', preview: 'assets/videos/peller-preview.mp4', full: 'assets/videos/peller.mp4', poster: 'assets/videos/peller-poster.jpg' },
     { title: 'Music Podcast', label: '04 / MUSIC PODCAST', preview: 'assets/videos/music-podcast-preview.mp4', full: 'assets/videos/music-podcast.mp4', poster: 'assets/videos/music-podcast-poster.jpg' }
   ],
-  shortForm: { title: 'Flux Edit', preview: 'assets/videos/flux-edit-preview.mp4', full: 'assets/videos/flux-edit.mp4', poster: 'assets/videos/flux-edit-poster.jpg' },
   projects: []
 };
