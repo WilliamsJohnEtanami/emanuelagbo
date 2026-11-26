@@ -430,5 +430,61 @@
         "sha256": "39a6c9cff459f2307c6ecf4924106964812fd0360be54d9064fd47729eb43937"
       }
     ]
+  },
+  {
+    "output": "dist/assets/videos/talking-head-pf-2.webm",
+    "size": 6821960,
+    "sha256": "68f4177f2e81c3ddca7cf027a423f6df62d603ffe0218f7f8634355a6a9932a2",
+    "parts": [
+      {
+        "path": "media/webm/talking-head-pf-2.part-001",
+        "size": 4194304,
+        "sha256": "7ee3002d841fe6f94172eb120d86b8e15ba6fe2941f82fddf1f043b014f6f7a7"
+      },
+      {
+        "path": "media/webm/talking-head-pf-2.part-002",
+        "size": 2627656,
+        "sha256": "1b82d184ec65586644a1fc6ba8e56f16d9be21c3410a3940ca4775a7457453ad"
+      }
+    ]
+  },
+  {
+    "output": "dist/assets/videos/talking-head-pf.webm",
+    "size": 9564553,
+    "sha256": "e82ea37e982d9f0bbd3a62ae482eb7e2e33cb9ec0f80dcd4fa299f045b589798",
+    "parts": [
+      {
+        "path": "media/webm/talking-head-pf.part-001",
+        "size": 4194304,
+        "sha256": "c9a95fe84f2a6f504785f5e532f2e10eece0127410721aafcb89540ec02980c5"
+      },
+      {
+        "path": "media/webm/talking-head-pf.part-002",
+        "size": 4194304,
+        "sha256": "0037a58c2e67f36d06049bbd328f1ef4c18552c1c4c18cc62200d861637b249b"
+      },
+      {
+        "path": "media/webm/talking-head-pf.part-003",
+        "size": 1175945,
+        "sha256": "5734af311b329b9f1f1cb4284e1a04419a53cb77cae8eca719abf0adf53b3a7b"
+      }
+    ]
+  },
+  {
+    "output": "dist/assets/videos/talking-head-expenses.webm",
+    "size": 7872329,
+    "sha256": "58afa2c20ff424e15013315538df4aec3d038248b089fea415b32293dd7baa1d",
+    "parts": [
+      {
+        "path": "media/webm/talking-head-expenses.part-001",
+        "size": 4194304,
+        "sha256": "4eee8445f9d371d4d938f7256dfe9441ec0ba5bccea49dc3da58683b608cb409"
+      },
+      {
+        "path": "media/webm/talking-head-expenses.part-002",
+        "size": 3678025,
+        "sha256": "ff52089344fc28984dcf4e50d27897f269572a6ca9e7e33315457b6e067c912d"
+      }
+    ]
   }
 ]

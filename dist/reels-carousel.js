@@ -54,4 +54,5 @@ function initialize({trackId,prefix,label}){
 }
 initialize({trackId:'#advertisements-grid',prefix:'reels',label:'reel'});
 initialize({trackId:'#shortform-grid',prefix:'documentary',label:'documentary'});
+initialize({trackId:'#longform-grid',prefix:'talking-head',label:'talking head video'});
 })();

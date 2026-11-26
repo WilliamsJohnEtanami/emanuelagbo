@@ -11,6 +11,9 @@ window.WEBAR_MEDIA = {
   projects: [
     { title: 'Airbnb', category: 'Talking Head', client: 'Airbnb', role: 'Talking Head', full: 'assets/videos/talking-head-airbnb.webm', poster: 'assets/talking-head-airbnb-poster.jpg' },
     { title: 'OURA Performance Film', category: 'Talking Head', client: 'OURA', role: 'Talking Head', full: 'assets/videos/talking-head-oura.webm', poster: 'assets/talking-head-oura-poster.jpg' },
+    { title: 'Talking Head PF 2', category: 'Talking Head', role: 'Talking Head', full: 'assets/videos/talking-head-pf-2.webm', poster: 'assets/talking-head-pf-2-poster.jpg' },
+    { title: 'Talking Head PF', category: 'Talking Head', role: 'Talking Head', full: 'assets/videos/talking-head-pf.webm', poster: 'assets/talking-head-pf-poster.jpg' },
+    { title: 'I Tracked My Expenses for 4,000 Days', category: 'Talking Head', role: 'Talking Head', full: 'assets/videos/talking-head-expenses.webm', poster: 'assets/talking-head-expenses-poster.jpg' },
     { title: 'C0012 66', category: 'Reels', role: 'Reel', full: 'assets/videos/reels-c0012.webm', poster: 'assets/reels-c0012-poster.jpg' },
     { title: 'Cow Video', category: 'Reels', role: 'Reel', full: 'assets/videos/reels-cow.webm', poster: 'assets/reels-cow-poster.jpg' },
     { title: 'Using Videos on LinkedIn', category: 'Reels', role: 'Reel', full: 'assets/videos/reels-linkedin.webm', poster: 'assets/reels-linkedin-poster.jpg' },
