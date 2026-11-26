@@ -14,6 +14,11 @@ window.WEBAR_MEDIA = {
     { title: 'C0012 66', category: 'Reels', role: 'Reel', full: 'assets/videos/reels-c0012.webm', poster: 'assets/reels-c0012-poster.jpg' },
     { title: 'Cow Video', category: 'Reels', role: 'Reel', full: 'assets/videos/reels-cow.webm', poster: 'assets/reels-cow-poster.jpg' },
     { title: 'Using Videos on LinkedIn', category: 'Reels', role: 'Reel', full: 'assets/videos/reels-linkedin.webm', poster: 'assets/reels-linkedin-poster.jpg' },
-    { title: 'Building Your Team', category: 'Reels', role: 'Reel', full: 'assets/videos/reels-team.webm', poster: 'assets/reels-team-poster.jpg' }
+    { title: 'Building Your Team', category: 'Reels', role: 'Reel', full: 'assets/videos/reels-team.webm', poster: 'assets/reels-team-poster.jpg' },
+    { title: 'Exposing the Reality of Social Media Influencers', category: 'Documentary', role: '90-second cut', full: 'assets/videos/doc-influencers-90s.webm', poster: 'assets/doc-influencers-poster.jpg' },
+    { title: 'TJ Watt', category: 'Documentary', role: 'Documentary', full: 'assets/videos/doc-tj-watt.webm', poster: 'assets/doc-tj-watt-poster.jpg' },
+    { title: 'VOX Animation & Sound Design', category: 'Documentary', role: 'Animation & Sound Design', full: 'assets/videos/doc-vox-animation.webm', poster: 'assets/doc-vox-animation-poster.jpg' },
+    { title: 'Doc PF Compressed 3', category: 'Documentary', role: '90-second cut', full: 'assets/videos/doc-pf-3.webm', poster: 'assets/doc-pf-3-poster.jpg' },
+    { title: 'Doc PF Compressed', category: 'Documentary', role: '90-second cut', full: 'assets/videos/doc-pf.webm', poster: 'assets/doc-pf-poster.jpg' }
   ]
 };

@@ -275,5 +275,160 @@
         "sha256": "3733074fccda2624edc3d5c22137d1c35c19e82f58b5bc694d5d0708ffbeb021"
       }
     ]
+  },
+  {
+    "output": "dist/assets/videos/doc-influencers-90s.webm",
+    "size": 11167509,
+    "sha256": "130e32d24d9c82188769abd15c9be80d938445f390f4b0f86f74fb4b43237537",
+    "parts": [
+      {
+        "path": "media/webm/doc-influencers-90s.part-001",
+        "size": 4194304,
+        "sha256": "c2ca9c7af6c36304cff5cf19783b0c57f21b08e7cd569b4b78938675f61296f0"
+      },
+      {
+        "path": "media/webm/doc-influencers-90s.part-002",
+        "size": 4194304,
+        "sha256": "675f889fbd2344a13162a0125b9970ffd72687594911030e693bd2d6a98dce4c"
+      },
+      {
+        "path": "media/webm/doc-influencers-90s.part-003",
+        "size": 2778901,
+        "sha256": "036ad6579672fcdce093fe6c5ee4441fbf541fc5b809ed73b031ca63b271626d"
+      }
+    ]
+  },
+  {
+    "output": "dist/assets/videos/doc-tj-watt.webm",
+    "size": 12787572,
+    "sha256": "0cbedd3bd2fd60d495f6bf70ba09aa26dcde14f01b32eb166a3fc1eff8a95e8c",
+    "parts": [
+      {
+        "path": "media/webm/doc-tj-watt.part-001",
+        "size": 4194304,
+        "sha256": "fd26fbbad10a4e4b5004d0c63513ccb00414bb7ac29cbe5f8090545e84a1dfb6"
+      },
+      {
+        "path": "media/webm/doc-tj-watt.part-002",
+        "size": 4194304,
+        "sha256": "ac577720c7a830d39744fca9d88543ad48d3ab0b2828389b5a824df66814bb92"
+      },
+      {
+        "path": "media/webm/doc-tj-watt.part-003",
+        "size": 4194304,
+        "sha256": "47ee62e8a97163f35b35ade386f157896cb822800142757af6f93ab14078e5d5"
+      },
+      {
+        "path": "media/webm/doc-tj-watt.part-004",
+        "size": 204660,
+        "sha256": "c817b70f8cf91dda6bfa4be3aa17bc73437134aad67e2699203da28c99cea925"
+      }
+    ]
+  },
+  {
+    "output": "dist/assets/videos/doc-vox-animation.webm",
+    "size": 9776145,
+    "sha256": "7265acf508eab023551ac401a1b1cd04db3cc919ed051095873daa0e55ac9008",
+    "parts": [
+      {
+        "path": "media/webm/doc-vox-animation.part-001",
+        "size": 4194304,
+        "sha256": "402b327e21400c8daa5af139a9ca838a38acaf3647f10e9cbc5648ede339e871"
+      },
+      {
+        "path": "media/webm/doc-vox-animation.part-002",
+        "size": 4194304,
+        "sha256": "bdd8a9237a5d3d6e2c2b1473d7a99378a7063e897ac543aecde4b746d0aabcc4"
+      },
+      {
+        "path": "media/webm/doc-vox-animation.part-003",
+        "size": 1387537,
+        "sha256": "2e25d2aa17617600679c719b8c0ae07bbe416e969dcf75eec37a241d5d656d97"
+      }
+    ]
+  },
+  {
+    "output": "dist/assets/videos/doc-pf-3.webm",
+    "size": 21458065,
+    "sha256": "118b3af33c52a3846e3109dc8f994af0afc46340d2c684a0e17edec13989e4e1",
+    "parts": [
+      {
+        "path": "media/webm/doc-pf-3.part-001",
+        "size": 4194304,
+        "sha256": "6599a526eac02ef521ac6b82c7cd2cf3a5d30500d5371c782833de8db6f1644e"
+      },
+      {
+        "path": "media/webm/doc-pf-3.part-002",
+        "size": 4194304,
+        "sha256": "96839fa8ea2e065f1b7f5e94c82c9c763d7b05ed3a7dc00f3b0913492b5c1785"
+      },
+      {
+        "path": "media/webm/doc-pf-3.part-003",
+        "size": 4194304,
+        "sha256": "23c56e607155f1fac39bb6cd8a5db4f6e3996fd1dfdac051188bab31c4fba677"
+      },
+      {
+        "path": "media/webm/doc-pf-3.part-004",
+        "size": 4194304,
+        "sha256": "005f3d68218804bf3454ab6af633b8a12474b51ce4723a94ec36e0f7b8a07667"
+      },
+      {
+        "path": "media/webm/doc-pf-3.part-005",
+        "size": 4194304,
+        "sha256": "2a24c812961c9599f0fb1eabf7ac993fbc15af3c0d559f271692bfbe439c317d"
+      },
+      {
+        "path": "media/webm/doc-pf-3.part-006",
+        "size": 486545,
+        "sha256": "4f4a30baea98ec5e54709855cf0707ed927334cf9808038f9aa3cc055ef0d460"
+      }
+    ]
+  },
+  {
+    "output": "dist/assets/videos/doc-pf.webm",
+    "size": 30417673,
+    "sha256": "fd295105325c24029c1a7d4c31a2ca451600e6dc728b908a9a22ac7c06e1212f",
+    "parts": [
+      {
+        "path": "media/webm/doc-pf.part-001",
+        "size": 4194304,
+        "sha256": "ff4f8bfe37920738c8e0113adb0b7ce21b34845afdadabfe92ed2791c6051b09"
+      },
+      {
+        "path": "media/webm/doc-pf.part-002",
+        "size": 4194304,
+        "sha256": "d393da105a89e5dd2640a398829d2997a3e21499ac597c6c3e6dcb5df3af5961"
+      },
+      {
+        "path": "media/webm/doc-pf.part-003",
+        "size": 4194304,
+        "sha256": "df0747772d7ba0e08bb9408ab3457162ec1af48499d616dfdfd027565de5247a"
+      },
+      {
+        "path": "media/webm/doc-pf.part-004",
+        "size": 4194304,
+        "sha256": "fd4f474f836a41fcaddddd398d90eb1f3030a46d39dab31a0894a89920e5fac2"
+      },
+      {
+        "path": "media/webm/doc-pf.part-005",
+        "size": 4194304,
+        "sha256": "7d7729c4c810b9a9bc4cc89348403460dad3fe9504f0307657d63986a38d560f"
+      },
+      {
+        "path": "media/webm/doc-pf.part-006",
+        "size": 4194304,
+        "sha256": "f9b50b6bca174d228d2a6dd7488f29669dc247d542ba4c1c3ffae043765d482b"
+      },
+      {
+        "path": "media/webm/doc-pf.part-007",
+        "size": 4194304,
+        "sha256": "e6d348eaaebee9beeca0be5795a75294b86d4b5fd8b2d0cca234d8fdb8638381"
+      },
+      {
+        "path": "media/webm/doc-pf.part-008",
+        "size": 1057545,
+        "sha256": "39a6c9cff459f2307c6ecf4924106964812fd0360be54d9064fd47729eb43937"
+      }
+    ]
   }
 ]
