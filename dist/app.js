@@ -52,7 +52,7 @@ for(const p of projectItems){const target=categoryTargets[categoryKey(p.category
 for(const [key,target] of Object.entries(categoryTargets)){if(target&&!target.children.length){const empty=document.createElement('div');empty.className='category-empty';empty.textContent='More work coming soon';target.append(empty);}}
 const heroWord=document.querySelector('#hero-word');
 if(heroWord){
-const heroWords=['STORIES','REELS','TRAILERS','DOCUMENTARY'];let heroWordIndex=0;
+const heroWords=['STORIES.','REELS.','TRAILERS.','DOCUMENTARIES.'];let heroWordIndex=0;
 const rotateHeroWord=()=>window.setTimeout(()=>{
 heroWord.classList.add('changing');
 window.setTimeout(()=>{heroWordIndex=(heroWordIndex+1)%heroWords.length;heroWord.textContent=heroWords[heroWordIndex];heroWord.classList.remove('changing');rotateHeroWord();},window.matchMedia('(prefers-reduced-motion: reduce)').matches?0:260);
