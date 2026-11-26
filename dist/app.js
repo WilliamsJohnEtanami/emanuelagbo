@@ -50,3 +50,12 @@ const projectItems=(media.projects||[]).filter(p=>p.title&&(p.preview||p.full)&&
 function makeProjectCard(p){const card=document.createElement('article');card.className='project';const video=document.createElement('video');video.src=p.full||p.preview;video.poster=p.poster;video.controls=true;video.playsInline=true;video.preload='none';video.setAttribute('aria-label',p.title);card.append(video);const title=document.createElement('h3');title.textContent=p.title;const caption=document.createElement('p');caption.textContent=[p.client,p.role].filter(Boolean).join(' / ');card.append(title,caption);return card;}
 for(const p of projectItems){const target=categoryTargets[categoryKey(p.category)];if(target)target.append(makeProjectCard(p));}
 for(const [key,target] of Object.entries(categoryTargets)){if(target&&!target.children.length){const empty=document.createElement('div');empty.className='category-empty';empty.textContent='More work coming soon';target.append(empty);}}
+const heroWord=document.querySelector('#hero-word');
+if(heroWord){
+const heroWords=['STORIES','REELS','TRAILERS','DOCUMENTARY'];let heroWordIndex=0;
+const rotateHeroWord=()=>window.setTimeout(()=>{
+heroWord.classList.add('changing');
+window.setTimeout(()=>{heroWordIndex=(heroWordIndex+1)%heroWords.length;heroWord.textContent=heroWords[heroWordIndex];heroWord.classList.remove('changing');rotateHeroWord();},window.matchMedia('(prefers-reduced-motion: reduce)').matches?0:260);
+},2000);
+rotateHeroWord();
+}
